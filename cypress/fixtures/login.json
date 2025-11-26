@@ -1,0 +1,5 @@
+{
+  "login_user": "[name=username]",
+  "psw_user": "[placeholder=Password]",
+  "button_click":"[type=submit]"
+}
