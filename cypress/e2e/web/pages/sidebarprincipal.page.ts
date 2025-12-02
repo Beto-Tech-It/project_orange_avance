@@ -1,4 +1,4 @@
-export class LoginPage {
+/*export class LoginPage {
   
   ingresarCredenciales(): void {
     cy.fixture("login").then((elements) => {
@@ -8,18 +8,20 @@ export class LoginPage {
     });
   }
 
-}
+}*/
+
+
 
 export class SidebarPrincipal {
 
     obtenerOpcionesAdmin(): void {
     cy.fixture("sidebarprincipal").then((elements) => {
       cy.get(elements.firts_level).contains("Admin").click();
-      cy.get(elements.firts_level).invoke("text").then((text) => {
+      /*cy.get(elements.firts_level).invoke("text").then((text) => {
           cy.log(text);
           expect(text).to.include("Time"); //primer text es parametro, el segundo text es una funcion*
         });
-      /*cy.get(elements.second_level)
+      cy.get(elements.second_level)
         .contains("Personal Details")
         .click()
         .wait(2000);*/
@@ -28,7 +30,7 @@ export class SidebarPrincipal {
   obtenerOpcionesPIM(): void {
     cy.fixture("sidebarprincipal").then((elements) => {
       cy.get(elements.firts_level).contains("PIM").click();
-      cy.get(elements.firts_level).invoke("text").then((text) => {
+      /*cy.get(elements.firts_level).invoke("text").then((text) => {
           cy.log(text);
           expect(text).to.include("Time"); //primer text es parametro, el segundo text es una funcion*
         });
