@@ -1,6 +1,6 @@
 import { Given, When } from '@badeball/cypress-cucumber-preprocessor';
 
-import { SidebarPrincipal } from '../pages/sidebarprincipal.page';
+import { SidebarPrincipal } from '../../pages/main_sidebar/sidebarprincipal.page';
 
 const sidebarprincipal = new SidebarPrincipal();
 
