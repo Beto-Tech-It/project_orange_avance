@@ -2,10 +2,23 @@ import { Given, When } from '@badeball/cypress-cucumber-preprocessor';
 
 import { SidebarPrincipal } from '../../pages/main_sidebar/sidebarprincipal.page';
 
-const sidebarprincipal = new SidebarPrincipal();
+ import { LoginPage } from '../../pages/login/login.page';
 
-Given('el usuario da click en cada opcion de sidebar del dashboard', () => {
- sidebarprincipal.obtenerOpcionesAdmin(); 
- sidebarprincipal.obtenerOpcionesPIM(); 
- 
+const sidebarprincipal = new SidebarPrincipal();
+const loginPage = new LoginPage();
+
+Given('que el usuario se encuentra en la página de login', () => {
+  loginPage.visit();
+});
+
+
+When('ingresa el username {string} y la contraseña {string}', (username: string, password: string) => {
+  loginPage.ingresarCredenciales(username, password);
+  loginPage.clickLoginButton();
+});
+
+
+
+When('el usuario da click en la opcion {string} del sidebar', (opcion: string) => {
+    sidebarprincipal.getMenuOptionSetup(opcion);
 });

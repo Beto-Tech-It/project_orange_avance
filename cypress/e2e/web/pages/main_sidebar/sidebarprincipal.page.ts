@@ -1,20 +1,19 @@
-/*export class LoginPage {
-  
-  ingresarCredenciales(): void {
-    cy.fixture("login").then((elements) => {
-      cy.get(elements.login_user).type("Admin");
-      cy.get(elements.psw_user).type("admin123");
-      cy.get(elements.button_click).click();
-    });
+ export class SidebarPrincipal {
+    
+    getMenuOptionSetup(option: string): void {
+        cy.fixture("sidebarprincipal").then((elements) => {
+            cy.get(elements.first_level).should("exist").and("be.visible").contains(option).click();
+        });
+    }
+
   }
 
-}*/
+ 
 
 
 
-export class SidebarPrincipal {
 
-    obtenerOpcionesAdmin(): void {
+    /*obtenerOpcionesAdmin(): void {
     cy.fixture("sidebarprincipal").then((elements) => {
       cy.get(elements.firts_level).contains("Admin").click();
       /*cy.get(elements.firts_level).invoke("text").then((text) => {
@@ -24,7 +23,7 @@ export class SidebarPrincipal {
       cy.get(elements.second_level)
         .contains("Personal Details")
         .click()
-        .wait(2000);*/
+        .wait(2000);
     });
   }
   obtenerOpcionesPIM(): void {
@@ -37,7 +36,7 @@ export class SidebarPrincipal {
       /*cy.get(elements.second_level)
         .contains("Personal Details")
         .click()
-        .wait(2000);*/
+        .wait(2000);
     });
-  }
-}
+  }*/
+  
